@@ -6,6 +6,19 @@
         <link href="/dist/output.css" rel="stylesheet">
         <script defer src="./assets/fontawesome/js/fontawesome.min.js"></script>
         <script defer src="./assets/fontawesome/js/solid.min.js"></script>
+        <script>
+            window.onload = () => {
+                const mobileMenuIcon = document.getElementById("mobile-menu-button");
+                mobileMenuIcon.addEventListener("click", () => {
+                    if(mobileMenuIcon.classList.contains("open")){
+                        mobileMenuIcon.classList.remove("open");
+                    }
+                    else {
+                        mobileMenuIcon.classList.add("open");
+                    }
+                })
+            }
+        </script>
     </head>
     <body>
         <main>
@@ -21,11 +34,11 @@
 
                     <!-- MOBILE HEADER -->
                     <div class="block md:hidden ml-auto pr-4 my-auto cursor-pointer">
-                        <div>
-                            <div class="bg-zinc-200 rounded-full w-8 h-1"></div>
-                            <div class="bg-zinc-200 rounded-full w-8 h-1 mt-1"></div>
-                            <div class="bg-zinc-200 rounded-full w-8 h-1 mt-1"></div>
-                        </div>
+                        <button id="mobile-menu-button" class="group peer">
+                            <div class="bg-zinc-200 rounded-full w-8 h-1 top-0 group-open:rotate-45 transition-all group-open:top-2 relative"></div>
+                            <div class="bg-zinc-200 rounded-full w-8 h-1 mt-1 opacity-100 group-open:opacity-0 transition-all"></div>
+                            <div class="bg-zinc-200 rounded-full w-8 h-1 mt-1 top-0 group-open:-rotate-45 transition-all group-open:-top-2 relative" ></div>
+                        </button>
                     </div>
 
                     <!-- HEADER RIGHT -->
